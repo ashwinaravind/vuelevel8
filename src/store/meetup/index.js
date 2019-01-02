@@ -9,7 +9,6 @@ export default {
   mutations: {
 
   setLoadedMeetups(state,payload) {
-    //console.log('setLoadedMeetups');
           state.loadedMeetups=payload
     },
   createMeetup (state,payload) {
@@ -33,7 +32,6 @@ export default {
     },
   actions: {
     loadedMeetups ({commit}) {
-      console.log('loadedMeetups');
         commit('setLoading',true)
         firebase.database().ref('meetups').once('value') // realtime data reading
         .then((data) => {
